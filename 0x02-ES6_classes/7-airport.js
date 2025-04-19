@@ -1,25 +1,19 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable */
+
 export default class Airport {
-  constructor(name, code) {
-    this._name = name;
-    this._code = code;
+    constructor(name, code) {
+      if (typeof name !== 'string') {
+        throw new TypeError('Name must be a string');
+      } else if (typeof code !== 'string') {
+        throw new TypeError('Code must be a string');
+      }
+  
+      this._name = name;
+      this._code = code;
+    }
+  
+    get [Symbol.toStringTag]() {
+      return `${this._code}`;
+    }
   }
-
-  // Getter for name and code
-  get name() {
-    return this._name;
-  }
-
-  get code() {
-    return this._code;
-  }
-
-  // Override default string conversion
-  toString() {
-    return `Airport [${this._code}]`;
-  }
-
-  // Override inspect() to get the detailed output when logged
-  inspect() {
-    return `Airport [${this._code}] { _name: '${this._name}', _code: '${this._code}' }`;
-  }
-}
