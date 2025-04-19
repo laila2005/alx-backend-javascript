@@ -12,7 +12,7 @@ try {
 }
 
 try {
-  const c2 = new ALXCourse('ES6', '1', ['Bob', 'Jane']);
+  // TODO: implement later
 } catch (err) {
   console.log(err);
 }
